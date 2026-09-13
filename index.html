@@ -125,6 +125,9 @@ nav li a:hover{color:var(--tinta)}
 .tl .url{display:block;margin-top:8px;font-family:var(--m);font-size:12px;color:var(--verde)}
 .tl .it.last .card{border-color:var(--verde);box-shadow:0 20px 40px -30px rgba(27,107,68,.5)}
 @media (max-width:760px){.tl::before{left:8px}.tl .it{grid-template-columns:1fr;padding-left:32px}.tl .it:nth-child(odd) .card,.tl .it:nth-child(even) .card{grid-column:1;text-align:left}.tl .it:nth-child(odd) .card::after,.tl .it:nth-child(even) .card::after{left:-30px;right:auto}}
+.ancha{margin:40px 0 8px;border-radius:14px;overflow:hidden;position:relative;box-shadow:0 30px 60px -36px rgba(23,21,18,.5)}
+.ancha img{display:block;width:100%;height:auto;aspect-ratio:16/7;object-fit:cover}
+.ancha figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;font-family:var(--m);font-size:12px;letter-spacing:.04em;color:var(--papel);background:linear-gradient(transparent,rgba(23,21,18,.78))}
 .build .after{margin-top:8px;font-family:var(--d);font-stretch:85%;font-weight:700;font-size:22px;text-align:center}
 .build .intro{color:var(--lapiz);font-size:18px;max-width:58ch;margin-top:14px}
 /* temario */
@@ -278,6 +281,7 @@ footer .links a:hover{color:var(--tinta)}
   <span class="mono">Lo que construís</span>
   <h2 style="margin-top:14px">Al terminar tenés seis cosas publicadas en internet. Una de ellas acepta pagos.</h2>
   <p class="intro">Cada módulo termina con algo subido, con su propia dirección. No con un certificado. Uso Lovable para el boceto, Claude Code y Cursor para el código, Supabase para los datos y Stripe o MercadoPago para cobrar. Cada cosa aparece en la semana en que hace falta.</p>
+  <figure class="ancha"><img src="img/manos.jpg" alt="Manos escribiendo en una notebook, con un celular al lado mostrando un pago aprobado" loading="lazy" width="1600" height="1066"><figcaption>La semana 6 se ve así: la app anda y el celular avisa que entró un pago.</figcaption></figure>
   <div class="tl">
     <div class="it"><div class="card"><span class="w">Semana 1</span><h3>Tu landing</h3><p>Primera página publicada en Vercel con tu dominio. Fea, pero tuya, y ya andando.</p><span class="url">vos.com.ar</span></div></div>
     <div class="it"><div class="card"><span class="w">Semana 2</span><h3>Prototipo y lista de espera</h3><p>Clickeable. Lo validás con cinco conversaciones y diez mails de gente que existe, antes de construir nada más.</p><span class="url">lista.vos.com.ar</span></div></div>
