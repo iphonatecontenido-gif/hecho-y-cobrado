@@ -167,7 +167,7 @@ details .body .proj i{font-style:normal;font-family:var(--m);font-size:11.5px;le
 .quien p{font-size:19px;line-height:1.55;margin-top:18px;color:var(--tinta)}
 .quien p.no{color:var(--lapiz)}
 /* precios */
-.prices{background:radial-gradient(ellipse at 50% 20%,var(--hoja) 0%,var(--papel) 70%);padding-bottom:64px}
+.prices{background:radial-gradient(ellipse at 50% 20%,var(--hoja) 0%,var(--papel) 70%);padding-bottom:112px}
 .prices .head{max-width:760px}
 .prices .head p{color:var(--lapiz);font-size:18px;margin-top:16px;line-height:1.55}
 .offer{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;margin-top:44px;align-items:start}
@@ -207,19 +207,22 @@ details .body .proj i{font-style:normal;font-family:var(--m);font-size:11.5px;le
 .garantia b{display:block;font-family:var(--d);font-stretch:85%;font-weight:800;font-size:22px;margin-bottom:8px}
 .garantia p{color:var(--lapiz);font-size:16px;max-width:64ch}
 /* faq */
-.faq{padding-top:56px}
+.faq{padding-top:64px;padding-bottom:112px;background-color:var(--hoja);border-radius:28px 28px 0 0;margin-top:-40px;box-shadow:0 -24px 48px -28px rgba(23,21,18,.28)}
 .faq .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;align-items:start}
 .faq .wrap>div>p{color:var(--lapiz);font-size:18px;margin-top:14px}
 .faq details .body{grid-template-columns:1fr;padding-left:4px;font-size:16.5px;color:var(--tinta);max-width:60ch}
 .faq summary{grid-template-columns:40px 1fr 28px}
 @media (max-width:860px){.faq .wrap{grid-template-columns:1fr}}
 /* cierre */
-.close{text-align:center;padding:96px 0 40px;background:linear-gradient(rgba(250,248,243,.94) 0%,rgba(250,248,243,.86) 34%,rgba(250,248,243,.55) 70%,rgba(250,248,243,.3) 100%),url(img/calle.jpg) center 40%/cover no-repeat}
+.close{text-align:center;padding:96px 0 40px;overflow:hidden;border-radius:28px 28px 0 0;margin-top:-40px;box-shadow:0 -24px 48px -28px rgba(23,21,18,.35);background:var(--papel)}
+.close .bg{position:absolute;left:0;right:0;top:-14%;bottom:-14%;z-index:0;background:url(img/calle.jpg) center 40%/cover no-repeat;will-change:transform}
+.close .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(250,248,243,.94) 0%,rgba(250,248,243,.86) 34%,rgba(250,248,243,.55) 70%,rgba(250,248,243,.3) 100%)}
+.close .wrap{position:relative;z-index:1}
 .close h2,.close .sub{text-shadow:0 1px 0 rgba(250,248,243,.8)}
 .close h2{font-size:clamp(38px,5.6vw,72px)}
 .close .sub{color:var(--lapiz);font-size:19px;margin:16px 0 34px}
 .band{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--verde);color:var(--hoja);border-radius:14px;padding:26px 32px;text-decoration:none;font-family:var(--d);font-stretch:80%;font-weight:800;font-size:clamp(22px,3.4vw,34px);margin:0 auto;max-width:900px;transition:background .16s ease}
-.band:hover{background:var(--verde-hover)}
+@media (hover:hover) and (pointer:fine){.band{transition:background .16s ease,transform .18s var(--ease-out)}.band:hover{background:var(--verde-hover);transform:translateY(-2px)}}
 .band span{font:500 14px var(--b);opacity:.92;text-align:right}
 .kit{max-width:900px;margin:56px auto 0;background:var(--pizarra);color:var(--papel);border-radius:14px;padding:40px 44px;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:36px;align-items:center;text-align:left}
 .kit h3{font-size:30px;font-stretch:78%;color:var(--papel)}
@@ -345,7 +348,7 @@ footer .links a:hover{color:var(--tinta)}
   <div class="offer">
     <div class="main">
       <div class="name"><b>Constructor</b><span>lanzamiento: 30 accesos en total</span></div>
-      <div class="price"><span class="now">USD 50</span><span class="was">precio de lanzamiento</span></div>
+      <div class="price"><span class="now">USD <span class="cnt" data-from="249" data-to="50">50</span></span><span class="was">precio de lanzamiento</span></div>
       <div class="cuotas">o hasta 6 cuotas con tarjeta de crédito, en pesos al cambio del día</div>
       <ul>
         <li><span>Los 13 módulos, publicados semana a semana desde el 28 de septiembre</span><em>acceso 24 meses</em></li>
@@ -358,8 +361,8 @@ footer .links a:hover{color:var(--tinta)}
     </div>
     <div class="ups">
       <span class="ey">Con más acompañamiento. Las dos incluyen todo lo de Constructor.</span>
-      <div class="up"><div class="t"><h3>Cohorte</h3><span class="pr">USD 80<small>lanzamiento</small></span></div><p>Ocho encuentros grupales en vivo, los lunes a las 19:00 de Argentina, para ver qué hiciste en la semana y arreglar lo que se trabó. Del 26 de octubre, cuando ya hay cuatro módulos publicados, al Demo Day del 14 de diciembre. Hasta 30 personas. Con tarjeta, hasta 6 cuotas.</p><a class="link" href="#kit" data-nivel="Cohorte">Reservar en la Cohorte →</a></div>
-      <div class="up"><div class="t"><h3>Mentoría</h3><span class="pr">USD 150<small>lanzamiento</small></span></div><p>Todo lo de Cohorte, más cuatro sesiones individuales de 45 minutos durante las ocho semanas y una revisión de tu proyecto antes de publicarlo, con el alcance que acordemos en la charla inicial. Ocho lugares. Con tarjeta, hasta 6 cuotas.</p><a class="link" href="#kit" data-nivel="Mentoría">Pedir la charla de Mentoría →</a></div>
+      <div class="up"><div class="t"><h3>Cohorte</h3><span class="pr">USD <span class="cnt" data-from="399" data-to="80">80</span><small>lanzamiento</small></span></div><p>Ocho encuentros grupales en vivo, los lunes a las 19:00 de Argentina, para ver qué hiciste en la semana y arreglar lo que se trabó. Del 26 de octubre, cuando ya hay cuatro módulos publicados, al Demo Day del 14 de diciembre. Hasta 30 personas. Con tarjeta, hasta 6 cuotas.</p><a class="link" href="#kit" data-nivel="Cohorte">Reservar en la Cohorte →</a></div>
+      <div class="up"><div class="t"><h3>Mentoría</h3><span class="pr">USD <span class="cnt" data-from="749" data-to="150">150</span><small>lanzamiento</small></span></div><p>Todo lo de Cohorte, más cuatro sesiones individuales de 45 minutos durante las ocho semanas y una revisión de tu proyecto antes de publicarlo, con el alcance que acordemos en la charla inicial. Ocho lugares. Con tarjeta, hasta 6 cuotas.</p><a class="link" href="#kit" data-nivel="Mentoría">Pedir la charla de Mentoría →</a></div>
     </div>
   </div>
   <p class="foot">Pagás con tarjeta de crédito por MercadoPago, en pesos y hasta 6 cuotas, o por Hotmart en dólares desde otro país. La factura te llega por mail.</p>
@@ -389,7 +392,7 @@ footer .links a:hover{color:var(--tinta)}
   </div>
 </div></section>
 
-<section class="close" id="kit"><div class="wrap">
+<section class="close" id="kit"><div class="bg" aria-hidden="true"></div><div class="wrap">
   <h2>Entrá al curso, o mirá primero cómo trabajo.</h2>
   <p class="sub">Constructor cuesta USD 50 para los primeros 30 accesos. Hoy entrás a la comunidad y al Kit de Arranque; los videos salen semana a semana desde el 28 de septiembre. La cohorte en vivo, opcional, empieza el 26 de octubre.</p>
   <a class="band" href="#precios">Entrar por USD 50 →<span>30 accesos<br>hasta 6 cuotas</span></a>
@@ -426,16 +429,22 @@ footer .links a:hover{color:var(--tinta)}
   var kit0=KC.innerHTML, btn0=KB.textContent;
   document.querySelectorAll('[data-nivel]').forEach(function(a){ a.addEventListener('click',function(){ var lv=a.getAttribute('data-nivel'); NV.value=lv; KC.innerHTML='<span class="ey" style="color:#8E9A93">Reserva de lugar</span><h3 style="margin-top:10px">'+(lv==='Mentoría'?'Mentoría: dejame tu mail y coordinamos la charla inicial.':'Reservá tu lugar en '+lv+'.')+'</h3><p>Te mando el link de pago por mail en el día, con el total en pesos y las cuotas. Hasta que pagues no hay compromiso. El Kit de Arranque va en el mismo mail.</p>'; KB.textContent=lv==='Mentoría'?'Pedir la charla':'Reservar en '+lv; }); });
   document.querySelectorAll('.tem details').forEach(function(d){ var pr=d.querySelector('.proj'); var sm=d.querySelector('summary'); if(pr&&sm){ var t=pr.textContent.replace(/^\s*(Proyecto|Integrador)\s*/,''); var e=document.createElement('span'); e.className='entrega'; e.textContent=t.trim(); sm.appendChild(e); } });
-  document.querySelectorAll('.mods:not(.faqs)').forEach(function(list){
-    list.addEventListener('toggle',function(e){ if(e.target.open){ list.querySelectorAll('details[open]').forEach(function(d){ if(d!==e.target) d.open=false; }); } },true);
+  function setOpen(d,open){ var b=d.querySelector('.body'); if(!b||reduce||!b.animate){ d.open=open; return; } if(d.getAttribute('data-anim')) return; d.setAttribute('data-anim','1'); b.style.overflow='hidden';
+    if(open){ d.open=true; var h=b.getBoundingClientRect().height; var an=b.animate([{height:'0px',opacity:0},{height:h+'px',opacity:1}],{duration:240,easing:'cubic-bezier(0.23,1,0.32,1)'}); an.onfinish=function(){ b.style.overflow=''; d.removeAttribute('data-anim'); }; }
+    else { var h0=b.getBoundingClientRect().height; var an2=b.animate([{height:h0+'px',opacity:1},{height:'0px',opacity:0}],{duration:200,easing:'cubic-bezier(0.23,1,0.32,1)'}); an2.onfinish=function(){ d.open=false; b.style.overflow=''; d.removeAttribute('data-anim'); }; } }
+  document.querySelectorAll('.mods').forEach(function(list){ var single=!list.classList.contains('faqs');
+    list.querySelectorAll('summary').forEach(function(sm){ sm.addEventListener('click',function(e){ e.preventDefault(); var d=sm.parentElement; var willOpen=!d.open; if(willOpen&&single){ list.querySelectorAll('details[open]').forEach(function(o){ if(o!==d) setOpen(o,false); }); } setOpen(d,willOpen); }); });
   });
 
   // anclas: scroll suave y, si el navegador no lo anima (pestaña oculta), salto directo
   document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href').slice(1); var el=id?document.getElementById(id):null; if(!el) return; e.preventDefault(); var y0=window.scrollY; el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); if(history.pushState) history.pushState(null,'','#'+id); setTimeout(function(){ if(Math.abs(window.scrollY-y0)<2 && Math.abs(el.getBoundingClientRect().top-80)>4) el.scrollIntoView({behavior:'auto',block:'start'}); },450); }); });
   // revelado al scroll (marketing: explicación y ritmo; una vez por elemento)
-  var rvSel=[['.rows .it',''],['.ancha',''],['.up',''],['.main','rv-s'],['.proof .foto',''],['.band','rv-s'],['.kit','']];
-  var io='IntersectionObserver' in window? new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });},{threshold:.05,rootMargin:'0px 0px -40px 0px'}):null;
+  var rvSel=[['.rows .it',''],['.ancha',''],['.tem .head>div',''],['.tem details',''],['.proof .foto',''],['.proof h2',''],['.proof .lead',''],['.proof .btn',''],['.quien h2',''],['.quien p',''],['.prices .head h2',''],['.prices .head p',''],['.main','rv-s'],['.up',''],['.prices .foot',''],['.garantia',''],['.bonos',''],['.faq h2',''],['.faq .wrap>div>p',''],['.faq details',''],['.close h2',''],['.close .sub',''],['.band','rv-s'],['.kit','']];
+  var io='IntersectionObserver' in window? new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });},{threshold:0,rootMargin:'0px 0px -24px 0px'}):null;
   if(io){ rvSel.forEach(function(pair){ var els=document.querySelectorAll(pair[0]); els.forEach(function(el,i){ var r=el.getBoundingClientRect(); if(r.top<window.innerHeight*0.9) return; el.classList.add('rv'); if(pair[1]) el.classList.add(pair[1]); el.style.transitionDelay=(Math.min(i,5)*60)+'ms'; io.observe(el); }); }); }
+  // el precio baja del precio posterior al de lanzamiento cuando aparece la oferta
+  var offer=document.querySelector('.offer');
+  if(offer&&!reduce&&'IntersectionObserver' in window){ var cio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; cio.disconnect(); offer.querySelectorAll('.cnt').forEach(function(el,i){ var a=+el.getAttribute('data-from'), b=+el.getAttribute('data-to'), t0=null, D=1100; el.textContent=a; function step(ts){ if(t0===null) t0=ts+i*140; var k=Math.min(1,Math.max(0,(ts-t0)/D)); var e2=1-Math.pow(1-k,3); el.textContent=Math.round(a+(b-a)*e2); if(k<1) requestAnimationFrame(step); else el.textContent=b; } requestAnimationFrame(step); }); }); },{threshold:.35}); cio.observe(offer); }
   // inclinación de la laptop con el mouse (solo puntero fino, no reduce-motion)
   var lap=document.querySelector('.laptop'), demo=document.querySelector('.demo');
   if(lap&&demo&&!reduce&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){
@@ -444,7 +453,7 @@ footer .links a:hover{color:var(--tinta)}
     demo.addEventListener('mouseleave',function(){ lap.style.setProperty('--ry','0deg'); lap.style.setProperty('--rx','0deg'); });
   }
   // parallax suave en las fotos grandes
-  if(!reduce){ var pimgs=document.querySelectorAll('.ancha img,.foto img'); var praf=null; function par(){ praf=null; var vh=window.innerHeight; pimgs.forEach(function(im){ var r=im.parentElement.getBoundingClientRect(); if(r.bottom<0||r.top>vh) return; var k=(r.top+r.height/2-vh/2)/vh; im.style.transform='translateY('+(k*-18).toFixed(1)+'px) scale(1.06)'; }); } window.addEventListener('scroll',function(){ if(!praf) praf=requestAnimationFrame(par); },{passive:true}); par(); }
+  if(!reduce){ var pimgs=document.querySelectorAll('.ancha img,.foto img,.close .bg'); var praf=null; function par(){ praf=null; var vh=window.innerHeight; pimgs.forEach(function(im){ var r=im.parentElement.getBoundingClientRect(); if(r.bottom<0||r.top>vh) return; var k=(r.top+r.height/2-vh/2)/vh; if(im.classList.contains('bg')) im.style.transform='translateY('+(k*-46).toFixed(1)+'px)'; else im.style.transform='translateY('+(k*-18).toFixed(1)+'px) scale(1.06)'; }); } window.addEventListener('scroll',function(){ if(!praf) praf=requestAnimationFrame(par); },{passive:true}); par(); }
   // terminal animada
   var T=document.getElementById('term'), slot=document.getElementById('slot');
   var L=[
