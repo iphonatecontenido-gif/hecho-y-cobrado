@@ -66,7 +66,7 @@ nav li a:hover{color:var(--tinta)}
 .term .p{color:#7F8A85}.term .ok{color:#5CC98A}.term .cmd{color:#F5D547}.term .warn{color:#F0B45C}.term .cc{color:#D97757}.term .tool{color:#8FBFE8}.term .res{color:#9AA5A0}.term .hd{display:block;color:#D97757;border-bottom:1px solid #2B3330;padding-bottom:6px;margin-bottom:8px}
 .cur{display:inline-block;width:7px;height:13px;background:#5CC98A;vertical-align:-2px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.print-slot{position:absolute;right:-16px;bottom:-30px;width:min(224px,44%);z-index:3;pointer-events:none}
+.print-slot{position:absolute;right:-20px;bottom:-56px;width:min(210px,42%);z-index:3;pointer-events:none}
 .print-slot.snap .receipt{transition:none}
 @media (max-width:900px){.print-slot{right:0;bottom:0}}
 .receipt{background:var(--hoja);color:var(--tinta);font-family:var(--m);font-size:11px;line-height:1.6;padding:20px 20px 26px;box-shadow:0 26px 50px -30px rgba(23,21,18,.45),0 2px 4px rgba(23,21,18,.08);-webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 100%,transparent 5px,#000 5.6px) bottom/13px 9px repeat-x;mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 100%,transparent 5px,#000 5.6px) bottom/13px 9px repeat-x;transform:rotate(-4deg)}
@@ -455,9 +455,9 @@ footer .links a:hover{color:var(--tinta)}
     ['tool','⏺ Write'],['','(app/pedido/page.tsx)\n'],['res','  ⎿ 96 líneas · botón de WhatsApp con el pedido armado\n'],
     ['tool','⏺ Bash'],['','(supabase db push)\n'],['res','  ⎿ tablas: productos, pedidos, clientes · RLS activo\n'],
     ['tool','⏺ Bash'],['','(npm run build)\n'],['ok','  ⎿ ✓ compilado sin errores\n'],
-    ['warn','! El webhook de MercadoPago no responde en local\n'],
+    ['warn','! MercadoPago: webhook sin respuesta en local\n'],
     ['p','> '],['cmd','Publicalo y actualizá la URL del webhook.',1],['','\n'],
-    ['tool','⏺ Bash'],['','(vercel --prod)\n'],['res','  ⎿ https://pedidos-distribuidora.vercel.app\n'],
+    ['tool','⏺ Bash'],['','(vercel --prod)\n'],['res','  ⎿ pedidos-distribuidora.vercel.app\n'],
     ['ok','⏺ MercadoPago · webhook verificado\n\n'],
     ['p','$ '],['cmd','cobro al cliente · USD 300',1],['','\n'],
     ['ok','✓ APROBADO'],['',' · comprobante n.º 000001\n']
