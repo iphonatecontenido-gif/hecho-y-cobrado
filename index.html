@@ -76,8 +76,10 @@ nav li a:hover{color:var(--tinta)}
 @media (prefers-reduced-motion:no-preference){.print-slot .receipt{clip-path:inset(0 0 100% 0);transition:clip-path .9s cubic-bezier(.2,0,0,1)}.print-slot.on .receipt{clip-path:inset(0 0 -2% 0)}}
 
 /* movimiento: superposición de secciones, revelado al scroll, inclinación de la laptop, precio que baja */
+.stack{position:relative}
 .prob{position:sticky;top:64px;z-index:1}
 .quien{position:sticky;top:64px;z-index:1}
+.stack>.prob,.stack>.quien{align-self:flex-start}
 .build,.tem,.proof,.prices,.faq,.close{position:relative;z-index:2;background:var(--papel)}
 .build,.prices{border-radius:28px 28px 0 0;box-shadow:0 -24px 48px -28px rgba(23,21,18,.45)}
 .prices{background:radial-gradient(ellipse at 50% 20%,var(--hoja) 0%,var(--papel) 70%)}
@@ -263,6 +265,7 @@ footer .links a:hover{color:var(--tinta)}
   </div>
 </div></section>
 
+<div class="stack">
 <section class="sec dark prob"><div class="wrap">
   <span class="mono">Lo que me pasó en la pestaña 14 del tutorial</span>
   <h2 style="margin-top:14px">Si probaste Lovable, ya sabés en qué paso se te rompió todo.</h2>
@@ -284,6 +287,7 @@ footer .links a:hover{color:var(--tinta)}
   </div>
   <p class="after">Después va el tuyo. Ese te va a llevar más findes.</p>
 </div></section>
+</div>
 
 <section class="sec tem" id="temario"><div class="wrap">
   <div class="head">
@@ -316,6 +320,7 @@ footer .links a:hover{color:var(--tinta)}
   </div>
 </div></section>
 
+<div class="stack">
 <section class="sec quien"><div class="wrap">
   <span class="mono">Para quién es</span>
   <h2 style="margin-top:14px">Antes de que pagues.</h2>
@@ -363,6 +368,7 @@ footer .links a:hover{color:var(--tinta)}
   </div>
   <div class="garantia"><b>15 días de garantía.</b><p>Si el curso no te sirvió, me mandás un mail dentro de los 15 días y te devuelvo la plata. Y si hiciste los nueve proyectos y todavía no cobraste, te doy dos sesiones uno a uno sin cargo para destrabarlo. Lo pienso así porque el problema casi nunca es la persona; es el orden en que se hacen las cosas.</p></div>
 </div></section>
+</div>
 
 <section class="sec faq" id="faq"><div class="wrap">
   <div><span class="mono">Preguntas</span><h2 style="margin-top:14px">Lo que me llega por mensaje.</h2><p>Si la tuya no está acá, escribime. Contesto yo, a veces tardo un día.</p></div>
