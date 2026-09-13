@@ -459,14 +459,21 @@ footer .links a:hover{color:var(--tinta)}
   function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
   function renderAll(){ T.innerHTML=L.map(function(x){return '<span class="'+x[0]+'">'+esc(x[1])+'</span>';}).join(''); slot.classList.add('on'); }
   if(reduce||!T){ if(T) renderAll(); return; }
-  var i=0,html='';
-  function step(){
-    if(i>=L.length){ slot.classList.add('on'); setTimeout(function(){ slot.classList.remove('on'); i=0; html=''; setTimeout(step,500); },11000); return; }
-    var x=L[i++];
-    if(x[2]){ var j=0; (function type(){ if(j<=x[1].length){ T.innerHTML=html+'<span class="'+x[0]+'">'+esc(x[1].slice(0,j))+'</span><span class="cur"></span>'; j+=3; setTimeout(type,10); } else { html+='<span class="'+x[0]+'">'+esc(x[1])+'</span>'; T.innerHTML=html+'<span class="cur"></span>'; setTimeout(step,140); } })(); }
-    else { html+='<span class="'+x[0]+'">'+esc(x[1])+'</span>'; T.innerHTML=html+'<span class="cur"></span>'; setTimeout(step, x[1].indexOf('\n')>=0?150:60); }
+  // motor por tiempo absoluto: no se arrastra si la pestaña está en segundo plano
+  var sched=[], t=300;
+  L.forEach(function(x){ if(x[2]){ for(var c=1;c<=x[1].length;c++){ sched.push({t:t, cls:x[0], txt:x[1].slice(0,c), part:true}); t+=14; } t+=220; sched.push({t:t, cls:x[0], txt:x[1], done:true}); } else { t+= x[1].indexOf('\n')>=0?170:70; sched.push({t:t, cls:x[0], txt:x[1], done:true}); } });
+  var END=t+250, HOLD=11000, LOOP=END+HOLD+600;
+  var start=performance.now();
+  function frame(){
+    var el=(performance.now()-start)%LOOP; var html=''; var partial='';
+    for(var k=0;k<sched.length;k++){ var it=sched[k]; if(it.t>el) break; if(it.done) html+='<span class="'+it.cls+'">'+esc(it.txt)+'</span>'; else partial='<span class="'+it.cls+'">'+esc(it.txt)+'</span>'; if(it.done) partial=''; }
+    var last=null; for(var k2=sched.length-1;k2>=0;k2--){ if(sched[k2].t<=el){ last=sched[k2]; break; } }
+    if(last&&last.part){ partial='<span class="'+last.cls+'">'+esc(last.txt)+'</span>'; }
+    T.innerHTML=html+partial+'<span class="cur"></span>';
+    if(el>=END&&el<END+HOLD) slot.classList.add('on'); else slot.classList.remove('on');
+    setTimeout(frame,60);
   }
-  setTimeout(step,300);
+  frame();
 })();
 </script>
 
