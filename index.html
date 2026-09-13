@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Curso de vibe coding en español: en 6 semanas tu idea es una app publicada que cobra con Stripe y MercadoPago.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cpath fill=%27%23171512%27 d=%27M8 4h48v52l-6-4-6 4-6-4-6 4-6-4-6 4-6-4-6 4z%27/%3E%3Ctext x=%2732%27 y=%2738%27 font-family=%27monospace%27 font-size=%2722%27 font-weight=%27700%27 fill=%27%23FAF8F3%27 text-anchor=%27middle%27%3E%3E_%3C/text%3E%3C/svg%3E">
+
 <title>Hecho y Cobrado</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -27,8 +27,8 @@ p{margin:0}
 a{color:var(--verde)}
 .mono{font-family:var(--m);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--lapiz)}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-.sec{padding:112px 0}
-@media (max-width:760px){.sec{padding:72px 0}}
+.sec{padding:84px 0}
+@media (max-width:760px){.sec{padding:56px 0}}
 .hl{background:linear-gradient(transparent 58%,var(--resaltador) 58%,var(--resaltador) 92%,transparent 92%);padding:0 .06em}
 .btn{display:inline-flex;align-items:center;gap:10px;font:600 16px var(--b);padding:15px 26px;border-radius:999px;background:var(--verde);color:var(--hoja);text-decoration:none;border:0;cursor:pointer;transition:transform .16s ease,background .16s ease}
 .btn:hover{background:var(--verde-hover);transform:translateY(-1px)}
@@ -87,7 +87,8 @@ nav li a:hover{color:var(--tinta)}
 .shot .chip{align-self:flex-start;font:500 11px var(--m);letter-spacing:.06em;color:var(--verde);background:#E4F1E9;padding:2px 7px;border-radius:4px}
 .shot .btnmini{align-self:flex-start;font:600 12px var(--b);background:var(--verde);color:var(--hoja);padding:6px 12px;border-radius:999px;margin-top:auto}
 .steps{display:flex;flex-direction:column;gap:18px;margin-top:26px}
-.steps div{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline}
+.steps>div{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline}
+.steps>div>div{display:block}
 .steps .n{font-family:var(--m);font-size:12px;color:var(--lapiz)}
 .steps b{display:block;font-weight:600}
 .steps span{color:var(--lapiz);font-size:15.5px}
@@ -102,9 +103,9 @@ nav li a:hover{color:var(--tinta)}
 .pcard h3{font-size:24px}
 .pcard p{color:var(--lapiz);font-size:15.5px}
 .pcard .url{margin-top:auto;font-family:var(--m);font-size:12px;color:var(--verde)}
-.build .after{text-align:center;margin-top:34px;font-family:var(--d);font-stretch:85%;font-weight:700;font-size:24px}
+.build .after{text-align:center;margin-top:28px;font-family:var(--d);font-stretch:85%;font-weight:700;font-size:24px}
 /* method mini */
-.method{padding:80px 0}
+.method{padding:8px 0 64px}
 .method .row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
 .method .row>div{padding:28px 22px;border-right:1px solid var(--linea)}
 .method .row>div:last-child{border-right:0}
@@ -135,8 +136,8 @@ details .body .proj{grid-column:1/-1;margin-top:10px;color:var(--tinta);font-wei
 details .body .proj i{font-style:normal;font-family:var(--m);font-size:11.5px;letter-spacing:.06em;color:var(--verde);margin-right:8px}
 @media (max-width:760px){.tem .head{grid-template-columns:1fr}details .body{grid-template-columns:1fr;padding-left:4px}summary{grid-template-columns:44px 1fr 28px}summary .h{display:none}}
 /* proof */
-.proof .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
-.portrait{aspect-ratio:4/5;background:var(--papel-oscuro);border:1px solid var(--linea);border-radius:10px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:18px}
+.proof .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;align-items:center}
+.portrait{aspect-ratio:4/5;max-width:340px;background:var(--hoja);box-shadow:0 20px 40px -28px rgba(23,21,18,.35);border:1px solid var(--linea);border-radius:10px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:18px}
 .portrait::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 6px,rgba(23,21,18,.04) 6px 7px)}
 .portrait span{position:relative;font-family:var(--m);font-size:12px;letter-spacing:.06em;color:var(--lapiz);text-transform:uppercase}
 .proof p.lead{color:var(--lapiz);font-size:18px;max-width:52ch;margin:18px 0 26px}
@@ -148,7 +149,7 @@ details .body .proj i{font-style:normal;font-family:var(--m);font-size:11.5px;le
 @media (max-width:860px){.proof .wrap{grid-template-columns:1fr}.portrait{max-width:360px}}
 /* audience diptych */
 .dip{display:grid;grid-template-columns:45fr 55fr}
-.dip>div{padding:96px 48px}
+.dip>div{padding:64px 48px}
 .dip .l{background:var(--papel)}
 .dip .r{background:var(--pizarra);color:var(--papel)}
 .dip .r h2{color:var(--papel)}
@@ -158,7 +159,7 @@ details .body .proj i{font-style:normal;font-family:var(--m);font-size:11.5px;le
 .dip .l li i{color:var(--verde)}.dip .r li i{color:#8E9A93}
 @media (max-width:760px){.dip{grid-template-columns:1fr}.dip>div{padding:64px 24px}}
 /* pricing */
-.prices{background:radial-gradient(ellipse at 50% 30%,var(--hoja) 0%,var(--papel) 70%)}
+.prices{padding-bottom:64px;background:radial-gradient(ellipse at 50% 30%,var(--hoja) 0%,var(--papel) 70%)}
 .prices h2{text-align:center}
 .prices .sub{text-align:center;color:var(--lapiz);font-size:18px;margin:12px 0 54px}
 .recs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
@@ -166,7 +167,8 @@ details .body .proj i{font-style:normal;font-family:var(--m);font-size:11.5px;le
 .rec{background:var(--hoja);font-family:var(--m);font-size:12.5px;line-height:1.6;padding:26px 24px 34px;box-shadow:0 30px 50px -30px rgba(23,21,18,.4),0 2px 3px rgba(23,21,18,.06);-webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 100%,transparent 5px,#000 5.6px) bottom/13px 9px repeat-x;mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,radial-gradient(circle at 50% 100%,transparent 5px,#000 5.6px) bottom/13px 9px repeat-x;display:flex;flex-direction:column;gap:6px}
 .rec.mid{transform:translateY(-16px)}
 @media (max-width:900px){.rec.mid{transform:none}}
-.rec .name{font-weight:500;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between}
+.rec .name{font-weight:500;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.rec .name span{text-align:right;max-width:58%;letter-spacing:.06em}
 .rec .name span{color:var(--lapiz)}
 .rec .price{font-family:var(--d);font-stretch:78%;font-weight:900;font-size:56px;letter-spacing:-.02em;line-height:1;margin:10px 0 2px}
 .rec .price small{font-family:var(--m);font-size:12px;font-weight:400;letter-spacing:.04em;color:var(--lapiz);display:block;margin-top:8px;font-stretch:100%}
@@ -190,19 +192,20 @@ details .body .proj i{font-style:normal;font-family:var(--m);font-size:11.5px;le
 .garantia p{color:var(--lapiz);font-size:15.5px}
 @media (max-width:640px){.garantia{grid-template-columns:1fr}}
 /* faq */
+.faq{padding-top:56px}
 .faq .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;align-items:start}
 .faq .wrap>p{color:var(--lapiz);font-size:18px;margin-top:14px}
 .faq details .body{grid-template-columns:1fr;padding-left:4px;font-size:16.5px;color:var(--tinta);max-width:60ch}
 .faq summary{grid-template-columns:40px 1fr 28px}
 @media (max-width:860px){.faq .wrap{grid-template-columns:1fr}}
 /* kit + close */
-.close{text-align:center;padding:120px 0 40px}
+.close{text-align:center;padding:72px 0 40px}
 .close h2{font-size:clamp(40px,6vw,76px)}
 .close .sub{color:var(--lapiz);font-size:19px;margin:16px 0 34px}
 .band{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--verde);color:var(--hoja);border-radius:14px;padding:26px 32px;text-decoration:none;font-family:var(--d);font-stretch:80%;font-weight:800;font-size:clamp(22px,3.4vw,34px);margin:0 auto;max-width:900px;transition:background .16s ease}
 .band:hover{background:var(--verde-hover)}
 .band span{font:500 13px var(--m);letter-spacing:.06em;opacity:.9;text-align:right}
-.kit{max-width:900px;margin:72px auto 0;background:var(--pizarra);color:var(--papel);border-radius:14px;padding:40px 44px;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:36px;align-items:center;text-align:left}
+.kit{max-width:900px;margin:56px auto 0;background:var(--pizarra);color:var(--papel);border-radius:14px;padding:40px 44px;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:36px;align-items:center;text-align:left}
 .kit h3{font-size:30px;font-stretch:78%;color:var(--papel)}
 .kit p{color:#C9D0CB;font-size:16px;margin-top:10px}
 .kit form{display:flex;flex-direction:column;gap:10px}
@@ -237,7 +240,7 @@ footer .links a:hover{color:var(--tinta)}
 
 <section class="hero" id="top"><div class="wrap">
   <div class="copy">
-    <span class="mono print">Curso + comunidad · 6 semanas · en español · Claude Code, Cursor, Supabase, Stripe y MercadoPago</span>
+    <span class="mono print">Curso + comunidad · 6 semanas · en español</span>
     <h1 class="print d1">Hacé tu app.<br>Después <span class="hl">cobrala.</span></h1>
     <p class="sub print d2">En 6 semanas tu idea es una app publicada en tu dominio, donde la gente se registra y paga. Lo digo yo, que hasta 2025 no había escrito una línea de código y hoy manejo mi negocio con sistemas que armé así.</p>
     <div class="ctas print d3"><a class="btn" href="#precios">Quiero mi primer recibo</a><a class="link" href="#temario">Ver el temario entero →</a></div>
@@ -291,11 +294,11 @@ Turnos Pro · renovación auto</pre><span class="btnmini">Pagar</span></div>
   </div>
   <div>
     <span class="mono">Las cuatro que uso, en el orden en que las uso</span>
-    <h2 style="margin-top:14px">Del boceto de una tarde al botón de pagar, con cuatro herramientas.</h2>
+    <h2 style="margin-top:14px">Con estas cuatro se llega al botón de pagar. No hacen falta más.</h2>
     <div class="steps">
       <div><span class="n">01</span><div><b>Lovable o Bolt</b><span>Para el boceto. En una tarde tenés algo que se puede clickear.</span></div></div>
-      <div><span class="n">02</span><div><b>Claude Code y Cursor</b><span>Acá el código pasa a ser tuyo y lo podés tocar sin miedo.</span></div></div>
-      <div><span class="n">03</span><div><b>Supabase</b><span>Base de datos y login. Cada usuario ve lo suyo y nada más.</span></div></div>
+      <div><span class="n">02</span><div><b>Claude Code y Cursor</b><span>Acá el código pasa a ser tuyo, con carpeta y todo, y lo podés abrir.</span></div></div>
+      <div><span class="n">03</span><div><b>Supabase</b><span>Guarda los datos y maneja el login. Cada usuario ve lo suyo y nada más.</span></div></div>
       <div><span class="n">04</span><div><b>Stripe y MercadoPago</b><span>El cobro. En dólares o en pesos, y con cuotas si hace falta.</span></div></div>
     </div>
     <p style="margin-top:26px"><a class="link" href="#temario">Cómo se encadenan en el temario →</a></p>
@@ -304,12 +307,12 @@ Turnos Pro · renovación auto</pre><span class="btnmini">Pagar</span></div>
 
 <section class="sec build" id="construir"><div class="wrap">
   <h2>Seis cosas publicadas al terminar. La última cobra.</h2>
-  <p class="cap">Cada módulo termina con algo subido a internet, con su propia URL. Certificado hay, pero no es lo que vas a mostrar.</p>
+  <p class="cap">Cada módulo termina con algo subido a internet, con su propia URL. Certificado hay, pero vas a mostrar la URL.</p>
   <div class="grid6">
     <div class="pcard"><span class="m">Módulo 1</span><h3>Tu landing</h3><p>Tu primera página en Vercel, con dominio propio.</p><span class="url">vos.com.ar</span></div>
     <div class="pcard"><span class="m">Módulo 2</span><h3>Prototipo + lista de espera</h3><p>Clickeable. Lo validás en 5 charlas y juntás 10 emails de gente que lo quiere.</p><span class="url">lista.vos.com.ar</span></div>
     <div class="pcard"><span class="m">Módulo 3</span><h3>Cotizador Pro</h3><p>Una app entera para tu rubro, con formularios que guardan y estados que cambian.</p><span class="url">cotizador.vos.com.ar</span></div>
-    <div class="pcard"><span class="m">Módulo 4</span><h3>Panel con usuarios</h3><p>La gente se registra y ve solo lo suyo. Nadie ve lo de otro.</p><span class="url">app.vos.com.ar</span></div>
+    <div class="pcard"><span class="m">Módulo 4</span><h3>Panel con usuarios</h3><p>La gente se registra y cada uno ve solo lo suyo.</p><span class="url">app.vos.com.ar</span></div>
     <div class="pcard"><span class="m">Módulo 5</span><h3>Una función con IA</h3><p>Que resuma o que redacte, con un tope de uso por usuario para que no te fundas.</p><span class="url">app.vos.com.ar/ia</span></div>
     <div class="pcard" style="border-color:var(--verde)"><span class="m" style="color:var(--verde)">Módulo 6 · el recibo</span><h3>Checkout cobrando</h3><p>Stripe y MercadoPago con suscripciones y webhooks. Y un pago de USD 1 que entra en tu cuenta.</p><span class="url">app.vos.com.ar/pagar</span></div>
   </div>
@@ -317,7 +320,7 @@ Turnos Pro · renovación auto</pre><span class="btnmini">Pagar</span></div>
 </div></section>
 
 <section class="method"><div class="wrap">
-  <span class="mono" style="display:block;margin-bottom:18px">El método</span>
+  <span class="mono" style="display:block;margin-bottom:18px">Cómo es cada lección</span>
   <div class="row">
     <div><span class="k">01</span><div class="w">Ver</div><p>Cada lección arranca mostrando lo que vas a tener subido al final.</p></div>
     <div><span class="k">02</span><div class="w">Construir</div><p>Lo hacés vos, con Claude al lado y, seguramente, un error en rojo en la pantalla.</p></div>
@@ -328,8 +331,8 @@ Turnos Pro · renovación auto</pre><span class="btnmini">Pagar</span></div>
 
 <section class="sec tem" id="temario"><div class="wrap">
   <div class="head">
-    <div><span class="mono">Temario</span><h2 style="margin-top:14px">Nueve módulos. Al terminar cada uno hay algo tuyo en internet.</h2></div>
-    <div><p>Lecciones de 8 a 20 minutos, con mi pantalla y mi cara. Claude Code es la herramienta principal porque es la que uso todos los días. Cursor va en paralelo por si algo cambia. Los últimos módulos son cobrar y lanzar, que es donde casi todos se quedan.</p>
+    <div><span class="mono">Temario</span><h2 style="margin-top:14px">Nueve módulos. Seis terminan con algo subido a internet, los otros con una hoja escrita, un checklist o una venta.</h2></div>
+    <div><p>Lecciones de 8 a 20 minutos, con mi pantalla y mi cara. Claude Code es la herramienta principal porque es la que uso todos los días. Cursor va en paralelo por si algo cambia. Los últimos módulos son cobrar y lanzar. Ahí me quedé yo las primeras veces.</p>
       <div class="metrics"><div><b>9</b><span>módulos</span></div><div><b>52</b><span>lecciones</span></div><div><b>29 h</b><span>de video</span></div><div><b>6</b><span>semanas</span></div></div></div>
   </div>
   <div class="mods">
@@ -362,7 +365,7 @@ Turnos Pro · renovación auto</pre><span class="btnmini">Pagar</span></div>
   <div class="l"><div><span class="mono">Para quién es</span><h2 style="margin-top:14px">Creo que te sirve si</h2>
     <ul><li><i>✓</i>tenés una idea puntual y podés sacar 10 horas por semana durante 6 semanas.</li><li><i>✓</i>usás ChatGPT todos los días y ya te cansaste de que todo quede en demo.</li><li><i>✓</i>no te importa en qué lenguaje esté, mientras ande.</li><li><i>✓</i>sos freelancer y querés entregarle a tus clientes apps con backend y cobro incluidos.</li></ul></div></div>
   <div class="r"><div><span class="mono">Para quién no</span><h2 style="margin-top:14px">Y no te sirve si</h2>
-    <ul><li><i>×</i>querés recibirte de programador o aprender un lenguaje desde cero.</li><li><i>×</i>pensás que Claude lo va a hacer todo solo y vos no vas a leer nada.</li><li><i>×</i>buscás algo de 2 horas para “entender de qué va”. Esto es más largo.</li><li><i>×</i>vas a hacer algo con datos de salud o plata ajena y no tenés un dev al lado.</li></ul></div></div>
+    <ul><li><i>×</i>querés recibirte de programador o aprender un lenguaje desde cero.</li><li><i>×</i>pensás que Claude lo va a hacer todo solo y vos no vas a leer nada.</li><li><i>×</i>buscás algo de 2 horas para ver de qué se trata. Esto es más largo.</li><li><i>×</i>vas a hacer algo con datos de salud o plata ajena y no tenés un dev al lado.</li></ul></div></div>
 </section>
 
 <section class="sec prices" id="precios"><div class="wrap">
@@ -373,26 +376,26 @@ Turnos Pro · renovación auto</pre><span class="btnmini">Pagar</span></div>
     <div class="rec"><div class="name">Constructor<span>ticket 01</span></div><div class="price"><span class="was" style="font-size:22px">297</span> USD 147<small>o 3 cuotas de ARS 75.000</small></div><hr>
       <div class="li"><span>Curso completo grabado</span><em>24 meses</em></div><div class="li"><span>52 lecciones, plantillas y proyectos</span><em>29 h</em></div><div class="li"><span>Comunidad “el Taller”</span><em>6 meses</em></div><div class="li"><span>Actualizaciones de herramientas</span><em>12 meses</em></div><div class="li"><span>Certificado con número de recibo</span><em>al cobrar</em></div>
       <a class="btn" href="#kit">Entrar como Constructor</a><div class="cupo">sin límite de cupo · entrás hoy</div></div>
-    <div class="rec mid"><div class="name">Cohorte<span>ticket 02 · la que yo elegiría</span></div><div class="price"><span class="was" style="font-size:22px">597</span> USD 347<small>o 6 cuotas de ARS 90.000</small></div><hr>
+    <div class="rec mid"><div class="name">Cohorte<span>ticket 02 · con las sesiones en vivo</span></div><div class="price"><span class="was" style="font-size:22px">597</span> USD 347<small>o 6 cuotas de ARS 90.000</small></div><hr>
       <div class="li"><span>Todo lo de Constructor</span><em></em></div><div class="li"><span>6 sesiones en vivo semanales</span><em>2 h c/u</em></div><div class="li"><span>Revisión de tu proyecto</span><em>cada módulo</em></div><div class="li"><span>Demo Day grabado</span><em>portfolio</em></div><div class="li"><span>Comunidad de por vida + canal privado</span><em></em></div><div class="li"><span>Revisión de seguridad antes de lanzar</span><em>bono</em></div>
       <a class="btn" href="#kit">Sumarme a la cohorte</a><div class="cupo">40 cupos · arranca el 26 de octubre</div></div>
     <div class="rec"><div class="name">Mentoría<span>ticket 03</span></div><div class="price"><span class="was" style="font-size:22px">1.497</span> USD 997<small>o 6 cuotas de ARS 250.000</small></div><hr>
       <div class="li"><span>Todo lo de Cohorte</span><em></em></div><div class="li"><span>4 sesiones 1:1</span><em>45 min</em></div><div class="li"><span>Revisión de código y seguridad de tu producto</span><em></em></div><div class="li"><span>Estoy en tu lanzamiento el día que sale</span><em></em></div><div class="li"><span>WhatsApp directo</span><em>6 semanas</em></div>
-      <a class="btn" href="#kit">Aplicar a Mentoría</a><div class="cupo">8 cupos · antes charlamos</div></div>
+      <a class="btn" href="#kit">Pedir lugar en Mentoría</a><div class="cupo">8 cupos · antes charlamos</div></div>
   </div>
   <p class="foot">15 días de garantía · Stripe · MercadoPago · Hotmart · hasta 6 cuotas en pesos</p>
   <div class="bonos"><h3>Si entrás en la preventa, esto va de regalo</h3>
-    <ul><li><i>01</i><span><b>Mis prompts</b>, los CLAUDE.md y las reglas de Cursor que uso, separados por tipo de producto.</span></li><li><i>02</i><span><b>Kit de pagos</b>, un repo base con Stripe y MercadoPago ya andando, con suscripciones y webhooks.</span></li><li><i>03</i><span><b>La plantilla de landing y lista de espera</b> en Next.js. Es la de esta misma página.</span></li><li><i>04</i><span><b>Taller en vivo “Tu primer cliente en 7 días”</b>.</span></li><li><i>05</i><span><b>Checklist de seguridad de Supabase</b>, 20 puntos y un script que los revisa solo.</span></li><li><i>06</i><span><b>Una clase con mi contador</b> sobre facturar y cobrar en dólares desde LATAM.</span></li></ul></div>
+    <ul><li><i>01</i><span><b>Mis prompts</b>, los CLAUDE.md y las reglas de Cursor que uso, separados por tipo de producto.</span></li><li><i>02</i><span><b>Kit de pagos</b>, un repo base con Stripe y MercadoPago ya andando, con suscripciones y webhooks.</span></li><li><i>03</i><span><b>La plantilla de landing y lista de espera</b> en Next.js. Es la de esta misma página.</span></li><li><i>04</i><span><b>Taller en vivo “Tu primer cliente en 7 días”</b>.</span></li><li><i>05</i><span><b>Checklist de seguridad de Supabase</b>, 20 puntos y un script que los revisa solo.</span></li><li><i>06</i><span><b>Una clase con mi contadora</b> sobre facturar y cobrar en dólares desde LATAM.</span></li></ul></div>
   <div class="garantia">
     <div><b>15 días para arrepentirte.</b><p>Si a los 15 días ves que no era lo tuyo, me mandás un mail y te devuelvo la plata. No hay formulario ni te voy a preguntar por qué.</p></div>
-    <div><b>Recibo o seguimos.</b><p>Si hiciste los 9 proyectos y todavía no cobraste, te doy 2 sesiones 1:1 sin cargo y las usamos para destrabarlo.</p></div>
+    <div><b>Si no cobraste, seguimos.</b><p>Si hiciste los 9 proyectos y todavía no cobraste, te doy 2 sesiones 1:1 sin cargo y las usamos para destrabarlo.</p></div>
   </div>
 </div></section>
 
 <section class="sec faq" id="faq"><div class="wrap">
   <div><span class="mono">Preguntas</span><h2 style="margin-top:14px">Lo que me llega por mensaje.</h2><p>Si la tuya no está acá, escribime. Contesto yo, a veces tardo un día.</p></div>
   <div class="mods">
-    <details open><summary><span class="n">01</span>¿Necesito saber programar?<span class="pm"></span></summary><div class="body">Yo no sabía cuando arranqué, en 2025, y sigo sin poder escribir código de memoria. Lo que hace falta es saber pedir bien y leer lo que te devuelve. Y no romper lo que ya andaba, que es lo más difícil. Eso es lo que enseño.</div></details>
+    <details open><summary><span class="n">01</span>¿Necesito saber programar?<span class="pm"></span></summary><div class="body">Yo no sabía cuando arranqué, en 2025, y sigo sin poder escribir código de memoria. Lo que hace falta es saber pedir bien y leer lo que te devuelve. Y no romper lo que ya andaba, que es lo más difícil. En eso se van las seis semanas.</div></details>
     <details><summary><span class="n">02</span>¿Cuánto tiempo por semana?<span class="pm"></span></summary><div class="body">Calculá entre 10 y 12 horas durante las 6 semanas. Si te lleva más, no pasa nada, el acceso dura 24 meses. A mí el sistema de finanzas me llevó bastante más laburo del que pensaba y salió igual.</div></details>
     <details><summary><span class="n">03</span>¿Cuánto cuestan las herramientas por mes?<span class="pm"></span></summary><div class="body">Entre USD 20 y 40, depende de cuánto uses Claude. En el Módulo 0 te muestro cómo arrancar con USD 20 y qué cosas son gratis mientras aprendés.</div></details>
     <details><summary><span class="n">04</span>¿Sirve si estoy en Argentina y no tengo Stripe?<span class="pm"></span></summary><div class="body">Es mi caso, yo cobro con MercadoPago. El Módulo 6 lo cubre entero, con suscripciones y webhooks, y cómo tener pesos y dólares en la misma app. El curso también lo podés pagar en pesos y en cuotas.</div></details>
@@ -404,7 +407,7 @@ Turnos Pro · renovación auto</pre><span class="btnmini">Pagar</span></div>
 </div></section>
 
 <section class="close" id="kit"><div class="wrap">
-  <h2>Eso es todo lo que tengo para contarte.</h2>
+  <h2>La Cohorte 1 arranca el 26 de octubre.</h2>
   <p class="sub">La Cohorte 1 empieza el lunes 26 de octubre. La preventa abre el 28 de septiembre. Y si no te cierra, el kit de abajo es gratis igual.</p>
   <a class="band" href="#precios">Quiero mi primer recibo →<span>30 cupos fundadores<br>USD 147 en vez de 297</span></a>
   <div class="kit">
@@ -414,7 +417,7 @@ Turnos Pro · renovación auto</pre><span class="btnmini">Pagar</span></div>
       <input type="email" name="email" placeholder="Tu email" autocomplete="email" required>
       <select name="objetivo" aria-label="Qué querés construir"><option value="">¿Qué querés armar?</option><option>Una herramienta para mi negocio</option><option>Un micro-SaaS</option><option>Apps para mis clientes</option><option>Todavía no sé</option></select>
       <button class="btn" type="submit">Mandame el Kit</button>
-      <span class="fine" id="kitmsg">Nada de spam. La primera semana un mail por día, después uno por semana y listo.</span>
+      <span class="fine" id="kitmsg">Nada de spam. Un par de mails por semana mientras armo el curso, uno por día la semana que abre la inscripción, y abajo de cada uno hay un link para irte.</span>
     </form>
   </div>
 </div></section>
@@ -439,6 +442,7 @@ Turnos Pro · renovación auto</pre><span class="btnmini">Pagar</span></div>
   });
 })();
 </script>
+
 
 </body>
 </html>
