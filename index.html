@@ -11,7 +11,7 @@
 </head>
 <body>
 <style>
-:root{--papel:#FAF8F3;--hoja:#FFFFFF;--tinta:#171512;--lapiz:#6B665C;--verde:#1B6B44;--verde-hover:#155637;--resaltador:#F5D547;--linea:#DDD7CA;--pizarra:#1A211D;--brote:#5CC98A;--papel-oscuro:#F1EDE4;--d:"Archivo","Instrument Sans",system-ui,sans-serif;--b:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--m:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+:root{--ease-out:cubic-bezier(0.23,1,0.32,1);--ease-in-out:cubic-bezier(0.77,0,0.175,1);--papel:#FAF8F3;--hoja:#FFFFFF;--tinta:#171512;--lapiz:#6B665C;--verde:#1B6B44;--verde-hover:#155637;--resaltador:#F5D547;--linea:#DDD7CA;--pizarra:#1A211D;--brote:#5CC98A;--papel-oscuro:#F1EDE4;--d:"Archivo","Instrument Sans",system-ui,sans-serif;--b:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--m:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -74,6 +74,30 @@ nav li a:hover{color:var(--tinta)}
 .receipt .head{font-weight:500;letter-spacing:.08em}
 .demo .cap{font-family:var(--m);font-size:12px;color:var(--lapiz);text-align:left;margin-top:34px;max-width:36ch;letter-spacing:.02em;align-self:flex-start}
 @media (prefers-reduced-motion:no-preference){.print-slot .receipt{clip-path:inset(0 0 100% 0);transition:clip-path .9s cubic-bezier(.2,0,0,1)}.print-slot.on .receipt{clip-path:inset(0 0 -2% 0)}}
+
+/* movimiento: superposición de secciones, revelado al scroll, inclinación de la laptop, precio que baja */
+.prob{position:sticky;top:64px;z-index:1}
+.quien{position:sticky;top:64px;z-index:1}
+.build,.tem,.proof,.prices,.faq,.close{position:relative;z-index:2;background:var(--papel)}
+.build,.prices{border-radius:28px 28px 0 0;box-shadow:0 -24px 48px -28px rgba(23,21,18,.45)}
+.prices{background:radial-gradient(ellipse at 50% 20%,var(--hoja) 0%,var(--papel) 70%)}
+.rv{opacity:0;transform:translateY(18px)}
+.rv.rv-l{transform:translateX(-28px)}
+.rv.rv-r{transform:translateX(28px)}
+.rv.rv-s{transform:scale(.96)}
+.rv.in{opacity:1;transform:none;transition:opacity .6s var(--ease-out),transform .7s var(--ease-out)}
+.demo{perspective:1400px}
+.laptop{transform:rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .5s var(--ease-out);will-change:transform}
+.main .price .now{font-variant-numeric:tabular-nums}
+@media (hover:hover) and (pointer:fine){
+  .tl .it .card,.up{transition:transform .18s var(--ease-out),box-shadow .18s var(--ease-out)}
+  .tl .it .card:hover,.up:hover{transform:translateY(-3px);box-shadow:0 18px 30px -22px rgba(23,21,18,.35)}
+}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:0;transform:none}.rv.in{transition:opacity .2s ease}
+  .laptop{transition:none}
+  .prob,.quien{position:relative;top:auto}
+}
 /* problema */
 .dark{background:var(--pizarra);color:var(--papel)}
 .dark h2{color:var(--papel)}
@@ -274,7 +298,7 @@ footer .links a:hover{color:var(--tinta)}
     <details><summary><span class="n">M3</span>Frontend real<span class="h">4 h</span><span class="pm"></span></summary><div class="body"><span>Next.js explicado para gente que no programa</span><span>Las 3 pantallas principales, con Claude Code</span><span>Formularios que validan y estados que cambian</span><span>Que se vea bien en el celular y lo pueda usar cualquiera</span><span>Refactor guiado, para que Claude ordene el desorden que quedó</span><span>Tests básicos, para que no se rompa lo que ya andaba</span><span>Ejercicio: Cotizador Pro completo</span><p class="proj"><i>Proyecto</i>Una app que funciona, subida a Vercel.</p></div></details>
     <details><summary><span class="n">M4</span>Datos y usuarios con Supabase<span class="h">4 h</span><span class="pm"></span></summary><div class="body"><span>Qué es una base de datos, en 15 minutos</span><span>Armar tus tablas con ayuda de Claude</span><span>Login con email, con Google o con magic link</span><span>Row Level Security, o sea que cada usuario ve solo lo suyo</span><span>CRUD completo desde la app</span><span>Storage para subir archivos e imágenes</span><span>Seguridad mínima, claves y .env, y lo que jamás subís a GitHub</span><span>Ejercicio: panel de usuario con datos propios</span><p class="proj"><i>Proyecto</i>Una app en producción donde la gente se registra y guarda lo suyo sin ver lo de los demás.</p></div></details>
     <details><summary><span class="n">M5</span>IA dentro de tu producto<span class="h">3 h</span><span class="pm"></span></summary><div class="body"><span>Tu primera llamada a la API de Claude o de OpenAI</span><span>Una función que resuma o redacte lo que el usuario le pasa</span><span>Chat con contexto del usuario</span><span>RAG simple, para que responda con tus propios documentos</span><span>Costos, límites y caché, para que no te llegue una factura sorpresa</span><span>Ejercicio: agregá una función de IA a tu producto</span><p class="proj"><i>Proyecto</i>Una función de IA andando en producción, con tope por usuario.</p></div></details>
-    <details><summary><span class="n">M6</span>Cobrar: Stripe y MercadoPago<span class="h">3,5 h</span><span class="pm"></span></summary><div class="body"><span>Cobro único, suscripción o créditos, y cuándo conviene cada uno</span><span>Stripe Checkout, suscripciones y webhooks</span><span>MercadoPago Checkout Pro, suscripciones y webhooks</span><span>Las dos pasarelas juntas, pesos y dólares en la misma app</span><span>Planes, paywall y estados de suscripción</span><span>Lo básico de facturación e impuestos en LATAM y España</span><span>Ejercicio: tu checkout con un pago aprobado</span><p class="proj"><i>Proyecto</i>Tu primer pago de USD 1 en la cuenta. Ese es el recibo.</p></div></details>
+    <details><summary><span class="n">M6</span>Cobrar: Stripe y MercadoPago<span class="h">3,5 h</span><span class="pm"></span></summary><div class="body"><span>Cobro único, suscripción o créditos, y cuándo conviene cada uno</span><span>Stripe Checkout, suscripciones y webhooks</span><span>MercadoPago Checkout Pro, suscripciones y webhooks</span><span>Las dos pasarelas juntas, pesos y dólares en la misma app</span><span>Planes, paywall y estados de suscripción</span><span>Lo básico de facturación e impuestos en LATAM y España</span><span>Ejercicio: tu checkout con un pago aprobado</span><p class="proj"><i>Proyecto</i>Tu primer pago de el primer pago aprobado en tu cuenta. Ese es el comprobante.</p></div></details>
     <details><summary><span class="n">M7</span>Producción: dominio, seguridad, monitoreo<span class="h">2,5 h</span><span class="pm"></span></summary><div class="body"><span>Entornos local, preview y producción</span><span>Dominio, DNS y email transaccional con Resend</span><span>Checklist de seguridad de 20 puntos, revisada con Claude</span><span>Monitoreo y errores con Sentry y los logs de Vercel</span><span>Backups, y qué hacer la noche que se rompe todo</span><span>Analítica de producto con PostHog</span><p class="proj"><i>Proyecto</i>Tu producto en dominio propio, mandando emails y con monitoreo. Checklist aprobada.</p></div></details>
     <details><summary><span class="n">M8</span>Cómo cobrar y lanzar lo que construiste<span class="h">3 h</span><span class="pm"></span></summary><div class="body"><span>Cuánto cobrar por un micro-producto, en qué moneda y si conviene dar cuotas</span><span>Landing de ventas de tu producto en 60 minutos</span><span>Los primeros 10 clientes, a mensaje, por comunidades, LinkedIn o WhatsApp</span><span>Build in public, o cómo sacar 15 piezas de contenido de tu propio proceso</span><span>Lanzamiento en Product Hunt y comunidades hispanas</span><span>Para freelancers, cómo vender apps a clientes desde la propuesta hasta la entrega</span><span>Qué números mirar la primera semana</span><p class="proj"><i>Proyecto</i>Landing publicada, 5 charlas de venta y 1 pago que entró.</p></div></details>
     <details><summary><span class="n">M9</span>Mantener y escalar<span class="h">2 h</span><span class="pm"></span></summary><div class="body"><span>Una rutina semanal de mantenimiento, con Claude</span><span>Nuevas features sin romper lo viejo</span><span>Cuándo contratar un dev y cómo darle tu código</span><span>Automatizaciones alrededor del producto con n8n y webhooks</span><span>Agentes, MCP y cómo no quedarte atrás cuando cambie todo otra vez</span><p class="proj"><i>Integrador</i>Tu micro-SaaS completo, con landing, login, datos, una función de IA, checkout doble, dominio propio y una venta documentada. Lo presentás en el Demo Day.</p></div></details>
@@ -377,6 +401,7 @@ footer .links a:hover{color:var(--tinta)}
 
 <script>
 (function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var f=document.getElementById('kitform'),m=document.getElementById('kitmsg');
   f.addEventListener('submit',function(e){
     e.preventDefault();
@@ -387,9 +412,23 @@ footer .links a:hover{color:var(--tinta)}
   document.querySelectorAll('.mods').forEach(function(list){
     list.addEventListener('toggle',function(e){ if(e.target.open){ list.querySelectorAll('details[open]').forEach(function(d){ if(d!==e.target) d.open=false; }); } },true);
   });
+
+  // revelado al scroll (marketing: explicación y ritmo; una vez por elemento)
+  var rvSel=[['.tl .it:nth-child(odd) .card','rv-l'],['.tl .it:nth-child(even) .card','rv-r'],['.build .after',''],['.bonos li',''],['.up',''],['.main','rv-s'],['.garantia',''],['.proof .foto','rv-l'],['.proof .wrap>div:last-child',''],['.quien p',''],['.prices .head',''],['.tem .head',''],['.band','rv-s'],['.kit',''],['.faq .wrap>div:first-child','']];
+  var io='IntersectionObserver' in window? new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });},{threshold:.12,rootMargin:'0px 0px -6% 0px'}):null;
+  if(io){ rvSel.forEach(function(pair){ var els=document.querySelectorAll(pair[0]); els.forEach(function(el,i){ var r=el.getBoundingClientRect(); if(r.top<window.innerHeight*0.9) return; el.classList.add('rv'); if(pair[1]) el.classList.add(pair[1]); el.style.transitionDelay=(Math.min(i,6)*70)+'ms'; io.observe(el); }); }); }
+  // inclinación de la laptop con el mouse (solo puntero fino, no reduce-motion)
+  var lap=document.querySelector('.laptop'), demo=document.querySelector('.demo');
+  if(lap&&demo&&!reduce&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var raf=null,mx=0,my=0;
+    demo.addEventListener('mousemove',function(e){ var r=demo.getBoundingClientRect(); mx=(e.clientX-r.left)/r.width-.5; my=(e.clientY-r.top)/r.height-.5; if(!raf) raf=requestAnimationFrame(function(){ lap.style.setProperty('--ry',(mx*10)+'deg'); lap.style.setProperty('--rx',(-my*6)+'deg'); raf=null; }); });
+    demo.addEventListener('mouseleave',function(){ lap.style.setProperty('--ry','0deg'); lap.style.setProperty('--rx','0deg'); });
+  }
+  // precio que baja de lista a lanzamiento cuando entra en pantalla
+  var now=document.querySelector('.main .price .now');
+  if(now&&io){ var target=50, from=249, done=false; var pio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting&&!done){ done=true; pio.disconnect(); if(reduce){ now.textContent='USD '+target; return; } var t0=null; function tick(ts){ if(!t0) t0=ts; var k=Math.min(1,(ts-t0)/1300); var ease=1-Math.pow(1-k,3); var v=Math.round(from-(from-target)*ease); now.textContent='USD '+v; if(k<1) requestAnimationFrame(tick); } requestAnimationFrame(tick); } }); },{threshold:.5}); pio.observe(now); }
   // terminal animada
   var T=document.getElementById('term'), slot=document.getElementById('slot');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var L=[
     ['p','~/turnos-pro $ '],['cmd','claude',1],['','\n'],
     ['p','> '],['cmd','Hacé una app de turnos para una peluquería. Reservas por día, confirmación por email, y un plan pago mensual.',1],['','\n\n'],
