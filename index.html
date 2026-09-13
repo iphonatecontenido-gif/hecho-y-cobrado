@@ -430,6 +430,8 @@ footer .links a:hover{color:var(--tinta)}
     list.addEventListener('toggle',function(e){ if(e.target.open){ list.querySelectorAll('details[open]').forEach(function(d){ if(d!==e.target) d.open=false; }); } },true);
   });
 
+  // anclas: scroll suave y, si el navegador no lo anima (pestaña oculta), salto directo
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href').slice(1); var el=id?document.getElementById(id):null; if(!el) return; e.preventDefault(); var y0=window.scrollY; el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); if(history.pushState) history.pushState(null,'','#'+id); setTimeout(function(){ if(Math.abs(window.scrollY-y0)<2 && Math.abs(el.getBoundingClientRect().top-80)>4) el.scrollIntoView({behavior:'auto',block:'start'}); },450); }); });
   // revelado al scroll (marketing: explicación y ritmo; una vez por elemento)
   var rvSel=[['.rows .it',''],['.ancha',''],['.up',''],['.main','rv-s'],['.proof .foto',''],['.band','rv-s'],['.kit','']];
   var io='IntersectionObserver' in window? new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });},{threshold:.05,rootMargin:'0px 0px -40px 0px'}):null;
